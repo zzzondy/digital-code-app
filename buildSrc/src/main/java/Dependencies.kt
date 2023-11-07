@@ -28,4 +28,9 @@ object Dependencies {
         const val composeJunit = "androidx.compose.ui:ui-test-junit4"
     }
 
+    object Firebase {
+
+        const val firebaseBom = "com.google.firebase:firebase-bom:32.5.0"
+    }
+
 }

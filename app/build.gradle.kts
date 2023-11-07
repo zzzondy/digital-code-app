@@ -1,6 +1,7 @@
 plugins {
     id(Plugins.kotlinAndroid)
     id(Plugins.androidApplication)
+    id(Plugins.gmsGoogleServices)
 }
 
 android {
@@ -72,6 +73,9 @@ dependencies {
     implementation(Dependencies.Compose.material3)
     debugImplementation(Dependencies.Compose.tooling)
     debugImplementation(Dependencies.Compose.testManifest)
+
+    // Firebase
+    implementation(platform(Dependencies.Firebase.firebaseBom))
 
     // Testing
     testImplementation(Dependencies.Testing.junit)

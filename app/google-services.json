@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "3167093123",
+    "project_id": "digital-code-app",
+    "storage_bucket": "digital-code-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3167093123:android:1de42a18dff9149c15f6b6",
+        "android_client_info": {
+          "package_name": "com.digitalcodeapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeydt0U4QptSIhRlTVcqtXmGioUcelL9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
