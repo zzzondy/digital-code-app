@@ -3,3 +3,9 @@ plugins {
     id(Plugins.kotlinAndroid) version Plugins.kotlinAndroidVersion apply false
     id(Plugins.gmsGoogleServices) version Plugins.gmsGoogleServicesVersion apply false
 }
+
+buildscript {
+    dependencies {
+        classpath(Dependencies.Hilt.daggerHiltProject)
+    }
+}

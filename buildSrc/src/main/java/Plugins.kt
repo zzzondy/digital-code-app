@@ -7,4 +7,8 @@ object Plugins {
 
     const val gmsGoogleServicesVersion = "4.4.0"
     const val gmsGoogleServices = "com.google.gms.google-services"
+
+    const val daggerHilt = "dagger.hilt.android.plugin"
+
+    const val kapt = "kapt"
 }

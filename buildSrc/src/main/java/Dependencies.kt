@@ -11,6 +11,8 @@ object Dependencies {
         const val tooling = "androidx.compose.ui:ui-tooling"
         const val testManifest = "androidx.compose.ui:ui-test-manifest"
         const val toolingPreview = "androidx.compose.ui:ui-tooling-preview"
+
+        const val navigation = "androidx.navigation:navigation-compose:2.7.5"
     }
 
     object Lifecycle {
@@ -31,6 +33,18 @@ object Dependencies {
     object Firebase {
 
         const val firebaseBom = "com.google.firebase:firebase-bom:32.5.0"
+    }
+
+    object Hilt {
+
+        private const val hiltVersion = "2.48.1"
+
+        const val daggerHiltProject = "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
+
+        const val hilt = "com.google.dagger:hilt-android:$hiltVersion"
+        const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
+        const val hiltCompose = "androidx.hilt:hilt-navigation-compose:1.1.0"
+        const val hiltCompiler = "androidx.hilt:hilt-compiler:1.1.0"
     }
 
 }

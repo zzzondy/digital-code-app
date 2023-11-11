@@ -2,6 +2,8 @@ plugins {
     id(Plugins.kotlinAndroid)
     id(Plugins.androidApplication)
     id(Plugins.gmsGoogleServices)
+    kotlin(Plugins.kapt)
+    id(Plugins.daggerHilt)
 }
 
 android {
@@ -74,8 +76,17 @@ dependencies {
     debugImplementation(Dependencies.Compose.tooling)
     debugImplementation(Dependencies.Compose.testManifest)
 
+    // Navigation
+    implementation(Dependencies.Compose.navigation)
+
     // Firebase
     implementation(platform(Dependencies.Firebase.firebaseBom))
+
+    // Hilt
+    implementation(Dependencies.Hilt.hilt)
+    implementation(Dependencies.Hilt.hiltCompose)
+    kapt(Dependencies.Hilt.hiltAndroidCompiler)
+    kapt(Dependencies.Hilt.hiltCompiler)
 
     // Testing
     testImplementation(Dependencies.Testing.junit)
@@ -83,4 +94,8 @@ dependencies {
     androidTestImplementation(Dependencies.Testing.espresso)
     androidTestImplementation(platform(Dependencies.Compose.composeBom))
     androidTestImplementation(Dependencies.Testing.composeJunit)
+}
+
+kapt {
+    correctErrorTypes = true
 }

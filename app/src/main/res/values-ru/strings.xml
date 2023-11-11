@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DigitalCodeApp</string>
+    <string name="main_screen">Главная</string>
+    <string name="dictionary">Справочник</string>
+    <string name="dictionary_icon">Справочник</string>
+    <string name="dictionary_details">Здесь собраны некоторые экономические термины</string>
+</resources>
