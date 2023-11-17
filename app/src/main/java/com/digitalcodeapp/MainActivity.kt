@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
 import com.digitalcodeapp.screens.app.AppScreen
-import com.digitalcodeapp.ui.theme.DigitalCodeAppTheme
+import com.digitalcodeapp.common.ui.theme.DigitalCodeAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

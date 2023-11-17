@@ -1,4 +1,4 @@
-package com.digitalcodeapp.ui.theme
+package com.digitalcodeapp.common.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

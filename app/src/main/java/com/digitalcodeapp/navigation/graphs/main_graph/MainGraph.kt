@@ -5,6 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.digitalcodeapp.navigation.Graphs
+import com.digitalcodeapp.screens.dictionary.presentation.DictionaryScreen
 import com.digitalcodeapp.screens.main.MainScreen
 
 fun NavGraphBuilder.registerMainGraph(navController: NavController) {
@@ -15,6 +16,10 @@ fun NavGraphBuilder.registerMainGraph(navController: NavController) {
 
         composable(route = Screens.MainScreen.route) {
             MainScreen(navController = navController)
+        }
+        
+        composable(route = Screens.DictionaryScreen.route) {
+            DictionaryScreen(navController = navController)
         }
     }
 }

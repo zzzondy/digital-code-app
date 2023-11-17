@@ -5,4 +5,21 @@
     <string name="dictionary">Справочник</string>
     <string name="dictionary_icon">Справочник</string>
     <string name="dictionary_details">Здесь собраны некоторые экономические термины</string>
+    <string name="return_back">Вернуться назад</string>
+    <string name="refresh_error">Произошла техническая ошибка, попробуйте позже</string>
+    <string name="no_wifi">Картинка отсутствия интернета</string>
+    <string name="some_error">Технические неполадки</string>
+    <string name="refresh">Обновить</string>
+    <string name="quiz">Квиз</string>
+    <string name="quiz_description">Проверьте ваши способности в тесте по финансовой грамотности</string>
+    <string name="quiz_icon">Квиз</string>
+    <string name="pocket_money">Карманные деньги</string>
+    <string name="pocket_money_description">Узнайте больше о карманных деньгах для школьников</string>
+    <string name="pocket_money_icon">Карманные деньги</string>
+    <string name="history_of_ruble">История рубля</string>
+    <string name="history_of_ruble_description">Здесь вы можете узнать как рубль стал рублем</string>
+    <string name="history_of_ruble_icon">Рубль</string>
+    <string name="financial_scam">Мошенничество</string>
+    <string name="financial_scam_description">Узнайте как распознать и предотвратить обман в интернете</string>
+    <string name="financial_scam_icon">Крючок</string>
 </resources>

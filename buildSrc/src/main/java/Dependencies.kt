@@ -33,6 +33,8 @@ object Dependencies {
     object Firebase {
 
         const val firebaseBom = "com.google.firebase:firebase-bom:32.5.0"
+
+        const val firestore = "com.google.firebase:firebase-firestore"
     }
 
     object Hilt {
@@ -45,6 +47,13 @@ object Dependencies {
         const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
         const val hiltCompose = "androidx.hilt:hilt-navigation-compose:1.1.0"
         const val hiltCompiler = "androidx.hilt:hilt-compiler:1.1.0"
+    }
+
+    object Paging {
+        private const val pagingVersion = "3.2.1"
+
+        const val runtime = "androidx.paging:paging-runtime:$pagingVersion"
+        const val compose = "androidx.paging:paging-compose:3.3.0-alpha02"
     }
 
 }

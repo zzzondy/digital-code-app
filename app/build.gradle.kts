@@ -81,12 +81,17 @@ dependencies {
 
     // Firebase
     implementation(platform(Dependencies.Firebase.firebaseBom))
+    implementation(Dependencies.Firebase.firestore)
 
     // Hilt
     implementation(Dependencies.Hilt.hilt)
     implementation(Dependencies.Hilt.hiltCompose)
     kapt(Dependencies.Hilt.hiltAndroidCompiler)
     kapt(Dependencies.Hilt.hiltCompiler)
+
+    // Paging
+    implementation(Dependencies.Paging.runtime)
+    implementation(Dependencies.Paging.compose)
 
     // Testing
     testImplementation(Dependencies.Testing.junit)

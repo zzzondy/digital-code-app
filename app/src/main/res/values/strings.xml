@@ -4,4 +4,21 @@
     <string name="dictionary">Dictionary</string>
     <string name="dictionary_icon">Dictionary</string>
     <string name="dictionary_details">There are some financial terms</string>
+    <string name="return_back">Return back</string>
+    <string name="refresh_error">Some error occurred when fetching data</string>
+    <string name="no_wifi">No wifi image</string>
+    <string name="some_error">Some error</string>
+    <string name="refresh">Refresh</string>
+    <string name="quiz">Quiz</string>
+    <string name="quiz_description">Test your skills in quiz</string>
+    <string name="quiz_icon">Quiz</string>
+    <string name="pocket_money">Pocket money</string>
+    <string name="pocket_money_description">Learn about pocket money for students</string>
+    <string name="pocket_money_icon">Pocket money</string>
+    <string name="history_of_ruble">History of ruble</string>
+    <string name="history_of_ruble_description">Learn more about appearing ruble in slavic countries</string>
+    <string name="history_of_ruble_icon">Ruble</string>
+    <string name="financial_scam">Financial scam</string>
+    <string name="financial_scam_description">Learn how to prevent scam in internet</string>
+    <string name="financial_scam_icon">Fishing</string>
 </resources>
