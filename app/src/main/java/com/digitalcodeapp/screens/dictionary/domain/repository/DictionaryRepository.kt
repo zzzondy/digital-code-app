@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface DictionaryRepository {
 
-    fun getPagedDictionaryTermsList(): Flow<PagingData<DictionaryTerm>>
+    fun getPagedDictionaryTermsList(query: String): Flow<PagingData<DictionaryTerm>>
 }

@@ -1,11 +1,19 @@
 package com.digitalcodeapp.screens.dictionary.presentation
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.paging.LoadState
@@ -48,18 +56,37 @@ private fun DictionaryScreenContent(
     dictionaryTerms: LazyPagingItems<DictionaryTerm>,
     onAction: (DictionaryScreenAction) -> Unit = {},
 ) {
+    var searchingQuery by rememberSaveable { mutableStateOf("") }
+    val focusManager = LocalFocusManager.current
+
     Scaffold(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .pointerInput(Unit) {
+                detectTapGestures { focusManager.clearFocus() }
+            },
         topBar = {
             DictionaryScreenTopAppBar(
-                onBackButtonClicked = { onAction(DictionaryScreenAction.OnBackArrowClicked) }
+                searchQuery = searchingQuery,
+                onBackButtonClicked = { onAction(DictionaryScreenAction.OnBackArrowClicked) },
+                onSearchQueryUpdated = { query ->
+                    searchingQuery = query
+                    onAction(DictionaryScreenAction.OnEnteredNewQuery(query))
+                },
+                onClearButtonClicked = {
+                    searchingQuery = ""
+                    onAction(DictionaryScreenAction.OnEnteredNewQuery(""))
+                },
+                modifier = Modifier
+                    .padding(horizontal = 16.dp)
             )
         },
     ) { paddingValues ->
         dictionaryTerms.apply {
             AnimatedContent(
                 targetState = loadState.refresh,
-                label = "dictionary screen animated content"
+                label = "dictionary screen animated content",
+                modifier = Modifier.padding(top = 16.dp)
             ) {
                 when (it) {
                     is LoadState.Loading -> {
@@ -91,7 +118,6 @@ private fun DictionaryScreenContent(
                     }
                 }
             }
-
         }
     }
 }

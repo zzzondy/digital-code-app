@@ -1,8 +1,12 @@
 package com.digitalcodeapp.screens.dictionary.presentation.states
 
-sealed interface DictionaryScreenAction {
+sealed class DictionaryScreenAction {
 
-    data object OnBackArrowClicked : DictionaryScreenAction
+    data object OnBackArrowClicked : DictionaryScreenAction()
 
-    data object OnRefreshButtonClicked : DictionaryScreenAction
+    data object OnRefreshButtonClicked : DictionaryScreenAction()
+
+    data class OnEnteredNewQuery(val query: String) : DictionaryScreenAction()
+
+
 }

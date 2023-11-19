@@ -4,5 +4,5 @@ import com.digitalcodeapp.screens.dictionary.domain.repository.DictionaryReposit
 
 class ObtainPagedDictionaryTermsListUseCase(private val dictionaryRepository: DictionaryRepository) {
 
-    operator fun invoke() = dictionaryRepository.getPagedDictionaryTermsList()
+    operator fun invoke(query: String = "") = dictionaryRepository.getPagedDictionaryTermsList(query)
 }

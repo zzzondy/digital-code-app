@@ -5,6 +5,7 @@ import com.digitalcodeapp.screens.dictionary.data.remote.states.RemotePagedDicti
 interface RemoteDictionaryRepository {
 
     suspend fun getPagedDictionaryTermsList(
+        query: String,
         startingPosition: Int,
         limit: Int
     ): RemotePagedDictionaryTermsListResult

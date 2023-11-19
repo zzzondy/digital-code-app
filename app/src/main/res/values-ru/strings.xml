@@ -22,4 +22,6 @@
     <string name="financial_scam">Мошенничество</string>
     <string name="financial_scam_description">Узнайте как распознать и предотвратить обман в интернете</string>
     <string name="financial_scam_icon">Крючок</string>
+    <string name="search">Поиск</string>
+    <string name="clear">Очистить</string>
 </resources>

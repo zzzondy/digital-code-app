@@ -21,4 +21,6 @@
     <string name="financial_scam">Financial scam</string>
     <string name="financial_scam_description">Learn how to prevent scam in internet</string>
     <string name="financial_scam_icon">Fishing</string>
+    <string name="search">Search</string>
+    <string name="clear">Clear</string>
 </resources>

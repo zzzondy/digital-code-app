@@ -8,9 +8,16 @@ import com.digitalcodeapp.screens.dictionary.domain.use_cases.ObtainPagedDiction
 import com.digitalcodeapp.screens.dictionary.presentation.states.DictionaryScreenAction
 import com.digitalcodeapp.screens.dictionary.presentation.states.DictionaryScreenEffect
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.sample
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,17 +27,34 @@ class DictionaryScreenViewModel @Inject constructor(
     dispatchersProvider: DispatchersProvider
 ) : ViewModel() {
 
-    val dictionaryTerms =
-        obtainPagedDictionaryTermsList().flowOn(dispatchersProvider.io).cachedIn(viewModelScope)
+    private val queryChannel = Channel<String>()
+
+    @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
+    val dictionaryTerms = queryChannel.receiveAsFlow()
+        .distinctUntilChanged()
+        .sample(SEARCHING_PERIOD)
+        .flatMapLatest { searchingQuery ->
+            obtainPagedDictionaryTermsList(searchingQuery)
+        }
+        .flowOn(dispatchersProvider.io)
+        .cachedIn(viewModelScope)
 
     private val _effect = MutableSharedFlow<DictionaryScreenEffect>()
     val effect = _effect.asSharedFlow()
 
+    init {
+        viewModelScope.launch {
+            queryChannel.send("")
+        }
+    }
+
     fun onAction(action: DictionaryScreenAction) {
         when (action) {
-            DictionaryScreenAction.OnBackArrowClicked -> onBackButtonClicked()
+            is DictionaryScreenAction.OnBackArrowClicked -> onBackButtonClicked()
 
-            DictionaryScreenAction.OnRefreshButtonClicked -> onRefreshButtonClicked()
+            is DictionaryScreenAction.OnRefreshButtonClicked -> onRefreshButtonClicked()
+
+            is DictionaryScreenAction.OnEnteredNewQuery -> onEnteredNewQuery(action.query)
         }
     }
 
@@ -44,5 +68,15 @@ class DictionaryScreenViewModel @Inject constructor(
         viewModelScope.launch {
             _effect.emit(DictionaryScreenEffect.RefreshData)
         }
+    }
+
+    private fun onEnteredNewQuery(query: String) {
+        viewModelScope.launch {
+            queryChannel.send(query)
+        }
+    }
+
+    companion object {
+        private const val SEARCHING_PERIOD: Long = 500
     }
 }

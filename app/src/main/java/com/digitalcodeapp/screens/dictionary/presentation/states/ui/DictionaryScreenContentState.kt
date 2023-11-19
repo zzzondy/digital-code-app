@@ -54,7 +54,7 @@ fun DictionaryScreenContentState(
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
 
-        items(dictionaryTerms, key = { it.id }) { term ->
+        items(dictionaryTerms) { term ->
             DictionaryItem(
                 label = term.label,
                 description = term.description,

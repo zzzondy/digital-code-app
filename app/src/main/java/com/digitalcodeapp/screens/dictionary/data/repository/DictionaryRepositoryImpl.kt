@@ -13,13 +13,15 @@ class DictionaryRepositoryImpl(
     private val remoteDictionaryRepository: RemoteDictionaryRepository
 ) : DictionaryRepository {
 
-    override fun getPagedDictionaryTermsList(): Flow<PagingData<DictionaryTerm>> {
+    override fun getPagedDictionaryTermsList(query: String): Flow<PagingData<DictionaryTerm>> {
         return Pager(
-            config = PagingConfig(pageSize = 10, prefetchDistance = 10),
-            pagingSourceFactory = { DictionaryTermsPagingSource(remoteDictionaryRepository) }
+            config = PagingConfig(pageSize = PAGE_SIZE, prefetchDistance = PAGE_SIZE),
+            pagingSourceFactory = { DictionaryTermsPagingSource(query, remoteDictionaryRepository) }
         ).flow
 
     }
 
-
+    companion object {
+        private const val PAGE_SIZE = 40
+    }
 }
