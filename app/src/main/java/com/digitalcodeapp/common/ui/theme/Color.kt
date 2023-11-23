@@ -61,3 +61,5 @@ val md_theme_dark_inversePrimary = Color(0xFF005AC2)
 val md_theme_dark_surfaceTint = Color(0xFFADC6FF)
 val md_theme_dark_outlineVariant = Color(0xFF44474F)
 val md_theme_dark_scrim = Color(0xFF000000)
+
+val DarkYellow = Color(0xFFFFC107)

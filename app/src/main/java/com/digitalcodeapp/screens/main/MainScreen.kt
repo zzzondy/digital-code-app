@@ -35,7 +35,7 @@ import androidx.navigation.NavController
 import com.digitalcodeapp.R
 import com.digitalcodeapp.common.ui.theme.DigitalCodeAppTheme
 import com.digitalcodeapp.common.utils.collectAsEffect
-import com.digitalcodeapp.navigation.graphs.main_graph.Screens
+import com.digitalcodeapp.navigation.graphs.main_graph.Screen
 import com.digitalcodeapp.screens.main.states.MainScreenAction
 import com.digitalcodeapp.screens.main.states.MainScreenEffect
 
@@ -47,7 +47,11 @@ fun MainScreen(
     viewModel.effect.collectAsEffect { effect ->
         when (effect) {
             MainScreenEffect.NavigateToDictionaryScreen -> {
-                navController.navigate(Screens.DictionaryScreen.route)
+                navController.navigate(Screen.DictionaryScreen.route)
+            }
+
+            MainScreenEffect.NavigateToQuizScreen -> {
+                navController.navigate(Screen.QuizScreen.route)
             }
         }
     }
@@ -55,6 +59,9 @@ fun MainScreen(
     MainScreenContent(
         onDictionarySectionClicked = {
             viewModel.onAction(MainScreenAction.OnDictionarySectionClicked)
+        },
+        onQuizSectionClicked = {
+            viewModel.onAction(MainScreenAction.OnQuizSectionClicked)
         }
     )
 }

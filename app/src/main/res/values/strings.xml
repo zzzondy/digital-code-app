@@ -23,4 +23,47 @@
     <string name="financial_scam_icon">Fishing</string>
     <string name="search">Search</string>
     <string name="clear">Clear</string>
+    <string name="question">Question %d of %d</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="exit">Exit</string>
+    <string name="start_quiz">Starting quiz</string>
+
+    <plurals name="start_quiz_details">
+        <item quantity="zero">You can try yourself in quiz. There are %d questions with single and multiple answers.</item>
+        <item quantity="one">You can try yourself in quiz. There are %d question with single and multiple answers.</item>
+        <item quantity="two">You can try yourself in quiz. There are %d questions with single and multiple answers.</item>
+        <item quantity="few">You can try yourself in quiz. There are %d questions with single and multiple answers.</item>
+        <item quantity="many">You can try yourself in quiz. There are %d questions with single and multiple answers.</item>
+        <item quantity="other">You can try yourself in quiz. There are %d questions with single and multiple answers.</item>
+    </plurals>
+    
+    <string name="are_you_sure_you_want_exit">Are you sure you want to exit?</string>
+    <string name="all_progress_will_be_lost">All progress will be lost.</string>
+    <string name="cancel">Cancel</string>
+    <string name="start">Start</string>
+    <string name="finish">Finish</string>
+    <string name="qre_you_sure_you_want_finish_quiz">Are you sure you want to finish quiz?</string>
+
+    <plurals name="you_have_unanswered_questions">
+        <item quantity="zero">You have %d unanswered questions.</item>
+        <item quantity="one">You have %d unanswered question.</item>
+        <item quantity="two">You have %d unanswered questions.</item>
+        <item quantity="few">You have %d unanswered questions.</item>
+        <item quantity="many">You have %d unanswered questions.</item>
+        <item quantity="other">You have %d unanswered questions.</item>
+    </plurals>
+
+    <string name="done_icon">Done</string>
+    <string name="quiz_is_finished">Quiz is finished</string>
+
+    <plurals name="quiz_is_finished_details">
+        <item quantity="zero">You have %d of %d right answered questions.</item>
+        <item quantity="one">You have %d of %d right answered question.</item>
+        <item quantity="two">You have %d of %d right answered questions.</item>
+        <item quantity="few">You have %d of %d right answered questions.</item>
+        <item quantity="many">You have %d of %d right answered questions.</item>
+        <item quantity="other">You have %d of %d right answered questions.</item>
+    </plurals>
+    <string name="to_main">To main</string>
 </resources>

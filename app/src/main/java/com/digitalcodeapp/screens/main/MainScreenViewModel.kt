@@ -19,12 +19,20 @@ class MainScreenViewModel @Inject constructor() : ViewModel() {
     fun onAction(action: MainScreenAction) {
         when (action) {
             MainScreenAction.OnDictionarySectionClicked -> onDictionarySectionClicked()
+
+            MainScreenAction.OnQuizSectionClicked -> onQuizSectionClicked()
         }
     }
 
     private fun onDictionarySectionClicked() {
         viewModelScope.launch {
             _effect.emit(MainScreenEffect.NavigateToDictionaryScreen)
+        }
+    }
+
+    private fun onQuizSectionClicked() {
+        viewModelScope.launch {
+            _effect.emit(MainScreenEffect.NavigateToQuizScreen)
         }
     }
 }

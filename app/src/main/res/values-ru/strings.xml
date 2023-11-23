@@ -24,4 +24,38 @@
     <string name="financial_scam_icon">Крючок</string>
     <string name="search">Поиск</string>
     <string name="clear">Очистить</string>
+    <string name="question">Вопрос %d из %d</string>
+    <string name="back">Назад</string>
+    <string name="next">Далее</string>
+    <string name="start_quiz">Начало квиза</string>
+
+    <plurals name="start_quiz_details">
+        <item quantity="one">Вы можете попробовать поучаствовать в квизе. Он состоит из %d вопроса.</item>
+        <item quantity="few">Вы можете попробовать поучаствовать в квизе. Он состоит из %d вопросов.</item>
+        <item quantity="many">Вы можете попробовать поучаствовать в квизе. Он состоит из %d вопросов.</item>
+        <item quantity="other">Вы можете попробовать поучаствовать в квизе. Он состоит из %d вопросов.</item>
+    </plurals>
+    <string name="exit">Выйти</string>
+    <string name="are_you_sure_you_want_exit">Вы уверены что хотите выйти?</string>
+    <string name="all_progress_will_be_lost">Весь прогресс будет потерян.</string>
+    <string name="cancel">Отмена</string>
+    <string name="start">Начать</string>
+    <string name="finish">Завершить</string>
+    <string name="qre_you_sure_you_want_finish_quiz">Вы уверены что хотите завершить квиз?</string>
+
+    <plurals name="you_have_unanswered_questions">
+        <item quantity="one">У вас %d неотвеченный вопрос.</item>
+        <item quantity="few">У вас %d неотвеченных вопросов.</item>
+        <item quantity="many">У вас %d неотвеченных вопросов.</item>
+        <item quantity="other">У вас %d неотвеченных вопросов.</item>
+    </plurals>
+    <string name="done_icon">Выполнено</string>
+    <string name="quiz_is_finished">Квиз успешно завершен</string>
+    <plurals name="quiz_is_finished_details">
+        <item quantity="one">У вас %d из %d верно отвеченный вопрос.</item>
+        <item quantity="few">У вас %d из %d верно отвеченных вопросов.</item>
+        <item quantity="many">У вас %d из %d верно отвеченных вопросов.</item>
+        <item quantity="other">У вас %d из %d верно отвеченных вопросов.</item>
+    </plurals>
+    <string name="to_main">На главную</string>
 </resources>
