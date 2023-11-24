@@ -1,18 +1,21 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id(Plugins.kotlinAndroid)
+    id(Plugins.androidApplication)
+    id(Plugins.gmsGoogleServices)
+    kotlin(Plugins.kapt)
+    id(Plugins.daggerHilt)
 }
 
 android {
     namespace = "com.digitalcodeapp"
-    compileSdk = 33
+    compileSdk = Config.compileSdk
 
     defaultConfig {
-        applicationId = "com.digitalcodeapp"
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Config.applicationId
+        minSdk = Config.minSdk
+        targetSdk = Config.targetSdk
+        versionCode = Config.versionCode
+        versionName = Config.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -20,8 +23,26 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = File("D:\\android projects\\DigitalCodeApp\\keystore.jks")
+            keyAlias = "upload"
+            keyPassword = "1233211"
+            storePassword = "123321"
+        }
+    }
+
     buildTypes {
         release {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            signingConfig = signingConfigs.getAt("release")
+        }
+
+        debug {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -40,7 +61,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = Dependencies.Compose.composeVersion
     }
     packaging {
         resources {
@@ -51,19 +72,45 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
-    implementation("androidx.activity:activity-compose:1.8.0")
-    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    // Lifecycle
+    implementation(Dependencies.Lifecycle.core)
+    implementation(Dependencies.Lifecycle.lifecycleRuntime)
+    implementation(Dependencies.Lifecycle.composeActivity)
+
+    // Compose
+    implementation(platform(Dependencies.Compose.composeBom))
+    implementation(Dependencies.Compose.ui)
+    implementation(Dependencies.Compose.uiGraphics)
+    implementation(Dependencies.Compose.toolingPreview)
+    implementation(Dependencies.Compose.material3)
+    debugImplementation(Dependencies.Compose.tooling)
+    debugImplementation(Dependencies.Compose.testManifest)
+
+    // Navigation
+    implementation(Dependencies.Compose.navigation)
+
+    // Firebase
+    implementation(platform(Dependencies.Firebase.firebaseBom))
+    implementation(Dependencies.Firebase.firestore)
+
+    // Hilt
+    implementation(Dependencies.Hilt.hilt)
+    implementation(Dependencies.Hilt.hiltCompose)
+    kapt(Dependencies.Hilt.hiltAndroidCompiler)
+    kapt(Dependencies.Hilt.hiltCompiler)
+
+    // Paging
+    implementation(Dependencies.Paging.runtime)
+    implementation(Dependencies.Paging.compose)
+
+    // Testing
+    testImplementation(Dependencies.Testing.junit)
+    androidTestImplementation(Dependencies.Testing.androidJunit)
+    androidTestImplementation(Dependencies.Testing.espresso)
+    androidTestImplementation(platform(Dependencies.Compose.composeBom))
+    androidTestImplementation(Dependencies.Testing.composeJunit)
+}
+
+kapt {
+    correctErrorTypes = true
 }

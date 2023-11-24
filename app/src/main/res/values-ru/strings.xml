@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DigitalCodeApp</string>
+    <string name="main_screen">Главная</string>
+    <string name="dictionary">Справочник</string>
+    <string name="dictionary_icon">Справочник</string>
+    <string name="dictionary_details">Здесь собраны некоторые экономические термины</string>
+    <string name="return_back">Вернуться назад</string>
+    <string name="refresh_error">Произошла техническая ошибка, попробуйте позже</string>
+    <string name="no_wifi">Картинка отсутствия интернета</string>
+    <string name="some_error">Технические неполадки</string>
+    <string name="refresh">Обновить</string>
+    <string name="quiz">Квиз</string>
+    <string name="quiz_description">Проверьте ваши способности в тесте по финансовой грамотности</string>
+    <string name="quiz_icon">Квиз</string>
+    <string name="pocket_money">Карманные деньги</string>
+    <string name="pocket_money_description">Узнайте больше о карманных деньгах для школьников</string>
+    <string name="pocket_money_icon">Карманные деньги</string>
+    <string name="fact_about_ruble">Факты о рубле</string>
+    <string name="fact_about_ruble_description">Несколько фактов о российской валюте</string>
+    <string name="facts_about_ruble_icon">Рубль</string>
+    <string name="financial_scam">Мошенничество</string>
+    <string name="financial_scam_description">Узнайте как распознать и предотвратить обман в интернете</string>
+    <string name="financial_scam_icon">Крючок</string>
+    <string name="search">Поиск</string>
+    <string name="clear">Очистить</string>
+    <string name="question">Вопрос %d из %d</string>
+    <string name="back">Назад</string>
+    <string name="next">Далее</string>
+    <string name="start_quiz">Начало квиза</string>
+
+    <plurals name="start_quiz_details">
+        <item quantity="one">Вы можете попробовать поучаствовать в квизе. Он состоит из %d вопроса.</item>
+        <item quantity="few">Вы можете попробовать поучаствовать в квизе. Он состоит из %d вопросов.</item>
+        <item quantity="many">Вы можете попробовать поучаствовать в квизе. Он состоит из %d вопросов.</item>
+        <item quantity="other">Вы можете попробовать поучаствовать в квизе. Он состоит из %d вопросов.</item>
+    </plurals>
+    <string name="exit">Выйти</string>
+    <string name="are_you_sure_you_want_exit">Вы уверены что хотите выйти?</string>
+    <string name="all_progress_will_be_lost">Весь прогресс будет потерян.</string>
+    <string name="cancel">Отмена</string>
+    <string name="start">Начать</string>
+    <string name="finish">Завершить</string>
+    <string name="qre_you_sure_you_want_finish_quiz">Вы уверены что хотите завершить квиз?</string>
+
+    <plurals name="you_have_unanswered_questions">
+        <item quantity="one">У вас %d неотвеченный вопрос.</item>
+        <item quantity="few">У вас %d неотвеченных вопросов.</item>
+        <item quantity="many">У вас %d неотвеченных вопросов.</item>
+        <item quantity="other">У вас %d неотвеченных вопросов.</item>
+    </plurals>
+    <string name="done_icon">Выполнено</string>
+    <string name="quiz_is_finished">Квиз успешно завершен</string>
+    <plurals name="quiz_is_finished_details">
+        <item quantity="one">У вас %d из %d верно отвеченный вопрос.</item>
+        <item quantity="few">У вас %d из %d верно отвеченных вопросов.</item>
+        <item quantity="many">У вас %d из %d верно отвеченных вопросов.</item>
+        <item quantity="other">У вас %d из %d верно отвеченных вопросов.</item>
+    </plurals>
+    <string name="to_main">На главную</string>
+    <string name="there_are_several_topics">Здесь собраны несколько статей о карманных деньгах и расходах.</string>
+    <string name="link">Статья %d</string>
+    <string name="tips">Советы</string>
+    <string name="example">Пример</string>
+    <string name="communication_with_seller">1. Общение с \"продавцом\"</string>
+    <string name="link_to_phishing">2. Ссылка на фишинговый ресурс для оплаты</string>
+    <string name="after_payment">3. После оплаты заказа \"продавец\" пропадет</string>
+    <string name="faq">Частые вопросы</string>
+    <string name="for_parents">Родители могут оформить детские дебетовые карты для своих детей, это удобно</string>
+    <string name="alfa">Альфа</string>
+    <string name="tinkoff">Тинькофф</string>
+    <string name="sber">Сбер</string>
+    <string name="vtb">ВТБ</string>
+</resources>
