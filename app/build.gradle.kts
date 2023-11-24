@@ -23,6 +23,15 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = File("D:\\android projects\\DigitalCodeApp\\keystore.jks")
+            keyAlias = "upload"
+            keyPassword = "1233211"
+            storePassword = "123321"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -30,6 +39,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getAt("release")
         }
 
         debug {
