@@ -126,7 +126,7 @@ fun QuizScreenContentState(
                     Text(
                         text = (iteration + 1).toString(),
                         style = MaterialTheme.typography.labelLarge,
-                        color = MaterialTheme.colorScheme.onBackground
+                        color = MaterialTheme.colorScheme.background
                     )
                 }
             }
@@ -230,6 +230,7 @@ private fun QuestionSection(
                 color = MaterialTheme.colorScheme.onBackground,
                 modifier = Modifier
                     .fillMaxWidth()
+                    .padding(bottom = 16.dp)
             )
         }
 

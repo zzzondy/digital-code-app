@@ -21,6 +21,13 @@ class MainScreenViewModel @Inject constructor() : ViewModel() {
             MainScreenAction.OnDictionarySectionClicked -> onDictionarySectionClicked()
 
             MainScreenAction.OnQuizSectionClicked -> onQuizSectionClicked()
+
+            MainScreenAction.OnFactsAboutRubleSectionClicked -> onFactsAboutRubleSectionClicked()
+
+            MainScreenAction.OnFinancialScamSectionClicked -> onFinancialScamSectionClicked()
+
+            MainScreenAction.OnPocketMoneySectionClicked -> onPocketMoneySectionClicked()
+
         }
     }
 
@@ -33,6 +40,24 @@ class MainScreenViewModel @Inject constructor() : ViewModel() {
     private fun onQuizSectionClicked() {
         viewModelScope.launch {
             _effect.emit(MainScreenEffect.NavigateToQuizScreen)
+        }
+    }
+
+    private fun onFactsAboutRubleSectionClicked() {
+        viewModelScope.launch {
+            _effect.emit(MainScreenEffect.NavigateToFactsAboutRubleScreen)
+        }
+    }
+
+    private fun onFinancialScamSectionClicked() {
+        viewModelScope.launch {
+            _effect.emit(MainScreenEffect.NavigateToFinancialScamScreen)
+        }
+    }
+
+    private fun onPocketMoneySectionClicked() {
+        viewModelScope.launch {
+            _effect.emit(MainScreenEffect.NavigateToPocketMoneyScreen)
         }
     }
 }

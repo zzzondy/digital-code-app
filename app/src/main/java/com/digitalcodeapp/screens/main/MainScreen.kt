@@ -53,6 +53,18 @@ fun MainScreen(
             MainScreenEffect.NavigateToQuizScreen -> {
                 navController.navigate(Screen.QuizScreen.route)
             }
+
+            MainScreenEffect.NavigateToFinancialScamScreen -> {
+                navController.navigate(Screen.FinancialScamScreen.route)
+            }
+
+            MainScreenEffect.NavigateToPocketMoneyScreen -> {
+                navController.navigate(Screen.PocketMoneyScreen.route)
+            }
+
+            MainScreenEffect.NavigateToFactsAboutRubleScreen -> {
+                navController.navigate(Screen.FactsAboutRubleScreen.route)
+            }
         }
     }
 
@@ -62,6 +74,15 @@ fun MainScreen(
         },
         onQuizSectionClicked = {
             viewModel.onAction(MainScreenAction.OnQuizSectionClicked)
+        },
+        onFinancialScamSectionClicked = {
+            viewModel.onAction(MainScreenAction.OnFinancialScamSectionClicked)
+        },
+        onPocketMoneySectionClicked = {
+            viewModel.onAction(MainScreenAction.OnPocketMoneySectionClicked)
+        },
+        onFactsAboutRubleSectionClicked = {
+            viewModel.onAction(MainScreenAction.OnFactsAboutRubleSectionClicked)
         }
     )
 }
@@ -71,9 +92,9 @@ fun MainScreen(
 fun MainScreenContent(
     onDictionarySectionClicked: () -> Unit = {},
     onPocketMoneySectionClicked: () -> Unit = {},
-    onHistoryOfRubleSectionClicked: () -> Unit = {},
     onFinancialScamSectionClicked: () -> Unit = {},
     onQuizSectionClicked: () -> Unit = {},
+    onFactsAboutRubleSectionClicked: () -> Unit = {},
 ) {
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
@@ -138,20 +159,20 @@ fun MainScreenContent(
                 )
             }
 
-            item(key = "history_of_ruble") {
+            item(key = "facts_about_ruble") {
                 Section(
-                    label = stringResource(R.string.history_of_ruble),
+                    label = stringResource(R.string.fact_about_ruble),
                     description = stringResource(
-                        R.string.history_of_ruble_description
+                        R.string.fact_about_ruble_description
                     ),
                     icon = painterResource(R.drawable.currency_ruble),
                     iconContentDescription = stringResource(
-                        R.string.history_of_ruble_icon
+                        R.string.facts_about_ruble_icon
                     ),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(125.dp),
-                    onSectionClicked = onHistoryOfRubleSectionClicked,
+                    onSectionClicked = onFactsAboutRubleSectionClicked,
                 )
             }
 

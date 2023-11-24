@@ -15,9 +15,9 @@
     <string name="pocket_money">Pocket money</string>
     <string name="pocket_money_description">Learn about pocket money for students</string>
     <string name="pocket_money_icon">Pocket money</string>
-    <string name="history_of_ruble">History of ruble</string>
-    <string name="history_of_ruble_description">Learn more about appearing ruble in slavic countries</string>
-    <string name="history_of_ruble_icon">Ruble</string>
+    <string name="fact_about_ruble">Facts about ruble</string>
+    <string name="fact_about_ruble_description">There are some facts about russian money</string>
+    <string name="facts_about_ruble_icon">Ruble</string>
     <string name="financial_scam">Financial scam</string>
     <string name="financial_scam_description">Learn how to prevent scam in internet</string>
     <string name="financial_scam_icon">Fishing</string>
@@ -37,7 +37,7 @@
         <item quantity="many">You can try yourself in quiz. There are %d questions with single and multiple answers.</item>
         <item quantity="other">You can try yourself in quiz. There are %d questions with single and multiple answers.</item>
     </plurals>
-    
+
     <string name="are_you_sure_you_want_exit">Are you sure you want to exit?</string>
     <string name="all_progress_will_be_lost">All progress will be lost.</string>
     <string name="cancel">Cancel</string>
@@ -66,4 +66,70 @@
         <item quantity="other">You have %d of %d right answered questions.</item>
     </plurals>
     <string name="to_main">To main</string>
+    <string name="there_are_several_topics">There are several topics about pocket money. You can learn it.</string>
+    <string name="link">Link %d</string>
+    <string name="link1" translatable="false">https://dzen.ru/a/Yv3-f1DWlgF5AqT-</string>
+    <string name="link2" translatable="false">https://profi.ru/media/karmannie-dengi-detyam-ne-nuzhni-ili-nuzhni-razbiraemsya-s-ekspertom</string>
+    <string name="link3" translatable="false">https://bcs-express.ru/novosti-i-analitika/5-oshibok-kotorye-roditeli-sovershaiut-s-karmannymi-den-gami</string>
+    <string name="tips">Tips</string>
+    <string name="example">Example</string>
+    <string name="tips_title" translatable="false">
+        Для хищения средств граждан злоумышленники используют все более изощренные сценарии, отметили в
+ЦБ. «В результате тысячи людей страдают от их действий, теряют деньги, которые в некоторых случаях
+копили годами», — говорится в сообщении. ЦБ опубликовал шесть рекомендаций, которые помогут
+защититься от кибермошенников.
+    </string>
+    <string name="tip1" translatable="false">В первую очередь, нельзя никому и никогда сообщать свои паспортные данные и данные карты: имя и
+фамилию ее владельца, трехзначный код с обратной стороны, пин-код или код подтверждения из СМС-
+сообщения. Сотрудники банков и государственных структур никогда не запрашивают такую информацию,
+напомнили в ЦБ.</string>
+    <string name="tip2" translatable="false">Во-вторых, если с неизвестного номера звонит якобы сотрудник банка, правоохранительных органов или
+государственной организаций и требует требованием быстрых действий с финансами, лучше положить
+трубку и самостоятельно перезвонить в банк. В-третьих, не следует совершать действий по счету, если вам
+позвонили с просьбой или требованием о переводе денег на счет в Центробанке. Дело в том, что ЦБ не
+открывает счета и не работает с гражданами. В-четвертых, по возможности используйте антивирус на всех
+устройствах и не забывайте его обновлять, напоминают в ЦБ.</string>
+    <string name="tip3" translatable="false">Покупки в интернете следует совершать только на проверенных сайтах, а еще лучше завести для онлайн-
+трат отдельную карту и пополнять ее ровно на ту сумму, которая требуется для оплаты. При совершении
+покупок нужно обратить внимание на наличие в строке браузера рядом с названием сайта значка
+безопасного соединения (замочка). Шестой способ защититься от мошенников — никогда не вводить
+личные и финансовые данные на сомнительных сайтах и не переходить по ссылкам из подозрительных
+писем с предложением пройти опрос, получить какую-либо выплату и тому подобное.</string>
+    <string name="tip4" translatable="false">Одной из популярных мошеннических схем является попытки убедить человека по телефону оформить
+кредит, рассказали в Центробанке. Ему звонит якобы сотрудник бюро кредитных историй и утверждает, что
+на него или его близких родственников мошенники пытаются оформить кредит, рассказали в ЦБ. Через
+короткое время ему перезванивают от имени сотрудника службы безопасности банка, правоохранительных
+органов или Банка России и говорят, что необходимо не дать злоумышленнику оформить кредит и поэтому
+надо как можно быстрее оформить «встречный кредит».</string>
+    <string name="tip5" translatable="false">«Для убедительности злоумышленники просят гражданина действовать оперативно и ни в коем случае
+не рассказывать про оформление кредита и его целях кому-либо, так как проводится секретная операция по
+вычислению жулика из числа сотрудников банка. Они убеждают жертву, что ее действия позволят раскрыть
+преступника, а кредитная история останется чистой», — говорится в сообщении ЦБ.</string>
+    <string name="tip6" translatable="false">При поступлении такого телефонного звонка надо немедленно прервать разговор, советуют в
+Центробанке. Там напомнили, что сотрудники банков не информируют граждан об изменениях в кредитной
+истории по телефону. Сообщить по телефону или каким-либо другим способом о попытке оформления
+кредита могут, как правило, только мошенники, добавили в ЦБ.</string>
+    <string name="communication_with_seller">1. Communication with "seller"</string>
+    <string name="link_to_phishing">2. Link to phishing resource for payment</string>
+    <string name="after_payment">3. After payment, "seller" will disappear</string>
+    <string name="faq">Usual questions</string>
+    <string name="fact1" translatable="false">Название «копейка» пришло к нам со времен правления Ивана Грозного, когда были отпечатаны монеты где изображен всадник с копьем, которые он повелел называть «копейными деньгами». Реформа Елены Глинской</string>
+    <string name="fact2" translatable="false">Раньше не было бумажных купюр, были только металлические деньги. Во времена Ломоносова произошел интересный факт: когда ему дали премию в 2000 рублей, то общий вес этой премии составил почти тонну, поэтому ему пришлось нанять телегу с рабочими, чтобы увезти свои деньги домой.</string>
+    <string name="fact3" translatable="false">Русская монета – полу-деньга (полушка) признана самой маленькой по весу и номиналу в мире. Она приравнивалась к копейке, и весила 0,17 г.</string>
+    <string name="fact4" translatable="false">Самая большая по размеру серебренная монета была отчеканена во времена правления Екатерины I в 1725 году. Ее размер составлял 18 на 18 сантиметров, толщина 5 миллиметров. Масса у нее была нешуточная: 1 килограмм 636 граммов.</string>
+    <string name="fact5" translatable="false">В истории современной России самая крупная серебряная монета весом в 3 килограмма была выпущена в 1999 году.</string>
+    <string name="fact6" translatable="false">В России в начале 18 века был выпущен квадратный медный рубль со сторонами по 20 см и весом в 1,4 кг</string>
+    <string name="fact7" translatable="false">Самые ненужные деньги были выпущены в России после смерти царя Александра I. Еще до коронации была отчеканена пария монет с портретом старшего наследника Константина, который отказался от престола в пользу Николая и тираж отправили на переплавку.</string>
+    <string name="fact8" translatable="false">В 1897 г. Россия по инициативе министра финансов С.Ю. Витте чуть было не лишилась рубля в качестве денежной единицы. Он предлагал ввести в обращение новую валюту с названием «Русь» или «Рус».</string>
+    <string name="fact9" translatable="false">В 1704 г. Россия первая в мире приравняла одну монету к 100 другим, путем оценки рубля в 100 копеек. Мы были в этом первыми и это факт.</string>
+    <string name="fact10" translatable="false">Самые дорогие российские монеты ежегодно выпускаются Центральным банком. Они весят по 1 кг и отливаются из золота. Их номинальная стоимость составляет всего 10 тыс. рублей.</string>
+    <string name="for_parents">Parents can register debt card for kid in some banks</string>
+    <string name="alfa">Alpha</string>
+    <string name="tinkoff">Tinkoff</string>
+    <string name="sber">Sber</string>
+    <string name="vtb">VTB</string>
+    <string name="alpha_link" translatable="false">https://alfabank.ru/everyday/debit-cards/childcard/</string>
+    <string name="tinkoff_link" translatable="false">https://www.tinkoff.ru/cards/debit-cards/tinkoff-black/junior/</string>
+    <string name="sber_link" translatable="false">https://www.sberbank.com/ru/person/bank_cards/debit/sberkarta_kids</string>
+    <string name="vtb_link" translatable="false">https://www.vtb.ru/personal/karty/debetovye/detskaya/</string>
 </resources>

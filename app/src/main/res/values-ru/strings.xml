@@ -16,9 +16,9 @@
     <string name="pocket_money">Карманные деньги</string>
     <string name="pocket_money_description">Узнайте больше о карманных деньгах для школьников</string>
     <string name="pocket_money_icon">Карманные деньги</string>
-    <string name="history_of_ruble">История рубля</string>
-    <string name="history_of_ruble_description">Здесь вы можете узнать как рубль стал рублем</string>
-    <string name="history_of_ruble_icon">Рубль</string>
+    <string name="fact_about_ruble">Факты о рубле</string>
+    <string name="fact_about_ruble_description">Несколько фактов о российской валюте</string>
+    <string name="facts_about_ruble_icon">Рубль</string>
     <string name="financial_scam">Мошенничество</string>
     <string name="financial_scam_description">Узнайте как распознать и предотвратить обман в интернете</string>
     <string name="financial_scam_icon">Крючок</string>
@@ -58,4 +58,17 @@
         <item quantity="other">У вас %d из %d верно отвеченных вопросов.</item>
     </plurals>
     <string name="to_main">На главную</string>
+    <string name="there_are_several_topics">Здесь собраны несколько статей о карманных деньгах и расходах.</string>
+    <string name="link">Статья %d</string>
+    <string name="tips">Советы</string>
+    <string name="example">Пример</string>
+    <string name="communication_with_seller">1. Общение с \"продавцом\"</string>
+    <string name="link_to_phishing">2. Ссылка на фишинговый ресурс для оплаты</string>
+    <string name="after_payment">3. После оплаты заказа \"продавец\" пропадет</string>
+    <string name="faq">Частые вопросы</string>
+    <string name="for_parents">Родители могут оформить детские дебетовые карты для своих детей, это удобно</string>
+    <string name="alfa">Альфа</string>
+    <string name="tinkoff">Тинькофф</string>
+    <string name="sber">Сбер</string>
+    <string name="vtb">ВТБ</string>
 </resources>

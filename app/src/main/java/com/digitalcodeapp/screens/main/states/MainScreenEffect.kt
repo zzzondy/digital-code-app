@@ -4,5 +4,11 @@ sealed interface MainScreenEffect {
 
     data object NavigateToDictionaryScreen : MainScreenEffect
 
+    data object NavigateToFinancialScamScreen : MainScreenEffect
+
+    data object NavigateToPocketMoneyScreen : MainScreenEffect
+
+    data object NavigateToFactsAboutRubleScreen : MainScreenEffect
+
     data object NavigateToQuizScreen : MainScreenEffect
 }

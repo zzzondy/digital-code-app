@@ -9,7 +9,10 @@ import androidx.navigation.navigation
 import com.digitalcodeapp.common.ui.components.AnimationConstants
 import com.digitalcodeapp.navigation.Graphs
 import com.digitalcodeapp.screens.dictionary.presentation.DictionaryScreen
+import com.digitalcodeapp.screens.facts_about_ruble.presentation.FactsAboutRubleScreen
+import com.digitalcodeapp.screens.financial_scam.presentation.FinancialScamScreen
 import com.digitalcodeapp.screens.main.MainScreen
+import com.digitalcodeapp.screens.pocket_money.presentation.PocketMoneyScreen
 import com.digitalcodeapp.screens.quiz.presentation.QuizScreen
 
 fun NavGraphBuilder.registerMainGraph(navController: NavController) {
@@ -57,5 +60,60 @@ fun NavGraphBuilder.registerMainGraph(navController: NavController) {
         ) {
             QuizScreen(navController = navController)
         }
+
+        composable(
+            route = Screen.FinancialScamScreen.route,
+            enterTransition = {
+                slideIntoContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
+                    animationSpec = tween(durationMillis = AnimationConstants.ENTER_ANIMATION_DURATION)
+                )
+            },
+            popExitTransition = {
+                slideOutOfContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
+                    animationSpec = tween(durationMillis = AnimationConstants.EXIT_ANIMATION_DURATION)
+                )
+            }
+        ) {
+            FinancialScamScreen(navController = navController)
+        }
+
+        composable(
+            route = Screen.PocketMoneyScreen.route,
+            enterTransition = {
+                slideIntoContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
+                    animationSpec = tween(durationMillis = AnimationConstants.ENTER_ANIMATION_DURATION)
+                )
+            },
+            popExitTransition = {
+                slideOutOfContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
+                    animationSpec = tween(durationMillis = AnimationConstants.EXIT_ANIMATION_DURATION)
+                )
+            }
+        ) {
+            PocketMoneyScreen(navController = navController)
+        }
+
+        composable(
+            route = Screen.FactsAboutRubleScreen.route,
+            enterTransition = {
+                slideIntoContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Left,
+                    animationSpec = tween(durationMillis = AnimationConstants.ENTER_ANIMATION_DURATION)
+                )
+            },
+            popExitTransition = {
+                slideOutOfContainer(
+                    towards = AnimatedContentTransitionScope.SlideDirection.Right,
+                    animationSpec = tween(durationMillis = AnimationConstants.EXIT_ANIMATION_DURATION)
+                )
+            }
+        ) {
+            FactsAboutRubleScreen(navController = navController)
+        }
+
     }
 }
