@@ -3,7 +3,9 @@ package com.digitalcodeapp.screens.quiz.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.digitalcodeapp.common.dispatchers.DispatchersProvider
+import com.digitalcodeapp.screens.quiz.domain.models.Question
 import com.digitalcodeapp.screens.quiz.domain.states.ObtainingAllQuizQuestionsResult
+import com.digitalcodeapp.screens.quiz.domain.use_cases.CheckAnswersOnQuestionsUseCase
 import com.digitalcodeapp.screens.quiz.domain.use_cases.ObtainAllQuizQuestionsUseCase
 import com.digitalcodeapp.screens.quiz.presentation.states.QuizScreenAction
 import com.digitalcodeapp.screens.quiz.presentation.states.QuizScreenEffect
@@ -20,10 +22,11 @@ import javax.inject.Inject
 @HiltViewModel
 class QuizScreenViewModel @Inject constructor(
     private val obtainAllQuizQuestionsUseCase: ObtainAllQuizQuestionsUseCase,
+    private val checkAnswersOnQuestionsUseCase: CheckAnswersOnQuestionsUseCase,
     private val dispatchersProvider: DispatchersProvider,
 ) : ViewModel() {
 
-    private var questions = listOf<PresentationQuestion>()
+    private var questions = listOf<Question>()
 
     private var _state = MutableStateFlow<QuizScreenState>(QuizScreenState.Loading)
 
@@ -42,16 +45,16 @@ class QuizScreenViewModel @Inject constructor(
                 is ObtainingAllQuizQuestionsResult.Success -> {
                     val newQuestions = questions.toMutableList()
 
-                    result.questions.forEach { question ->
+                    result.domainQuestions.forEach { question ->
                         val presentationQuestion = if (question.rightAnswers.size == 1) {
-                            PresentationQuestion.QuestionWithSingleAnswer(
-                                question = question,
+                            Question.QuestionWithSingleAnswer(
+                                domainQuestion = question,
                                 shuffledAnswers = getShuffledAnswers(question.rightAnswers, question.irregularAnswers),
                                 selectedAnswer = ""
                             )
                         } else {
-                            PresentationQuestion.QuestionWithMultipleAnswers(
-                                question = question,
+                            Question.QuestionWithMultipleAnswers(
+                                domainQuestion = question,
                                 shuffledAnswers = getShuffledAnswers(question.rightAnswers, question.irregularAnswers),
                                 selectedAnswers = listOf()
                             )
@@ -128,11 +131,11 @@ class QuizScreenViewModel @Inject constructor(
             var requestedQuestion = questions[numberOfQuestion]
 
             when (requestedQuestion) {
-                is PresentationQuestion.QuestionWithSingleAnswer -> {
+                is Question.QuestionWithSingleAnswer -> {
                     requestedQuestion = requestedQuestion.copy(selectedAnswer = selectedAnswer)
                 }
 
-                is PresentationQuestion.QuestionWithMultipleAnswers -> {
+                is Question.QuestionWithMultipleAnswers -> {
                     val selectedAnswers = requestedQuestion.selectedAnswers.toMutableList()
 
                     if (selectedAnswers.contains(selectedAnswer)) {
@@ -169,13 +172,13 @@ class QuizScreenViewModel @Inject constructor(
             var numberOfUnansweredQuestions = 0
             questions.forEach { question ->
                 when (question) {
-                    is PresentationQuestion.QuestionWithSingleAnswer -> {
+                    is Question.QuestionWithSingleAnswer -> {
                         if (question.selectedAnswer.isBlank()) {
                             numberOfUnansweredQuestions++
                         }
                     }
 
-                    is PresentationQuestion.QuestionWithMultipleAnswers -> {
+                    is Question.QuestionWithMultipleAnswers -> {
                         if (question.selectedAnswers.isEmpty()) {
                             numberOfUnansweredQuestions++
                         }
@@ -191,27 +194,12 @@ class QuizScreenViewModel @Inject constructor(
         viewModelScope.launch {
             _effect.emit(QuizScreenEffect.ShowLoadingDialog)
 
-            var numberOfRightAnswers = 0
-            questions.forEach { question ->
-                when (question) {
-                    is PresentationQuestion.QuestionWithSingleAnswer -> {
-                        if (question.selectedAnswer == question.question.rightAnswers[0]) {
-                            numberOfRightAnswers++
-                        }
-                    }
-
-                    is PresentationQuestion.QuestionWithMultipleAnswers -> {
-                        if (question.selectedAnswers == question.question.rightAnswers) {
-                            numberOfRightAnswers++
-                        }
-                    }
-                }
-            }
+            val result = checkAnswersOnQuestionsUseCase(questions)
 
             _effect.emit(QuizScreenEffect.HideLoadingDialog)
             _state.update {
                 QuizScreenState.Finish(
-                    numberOfRightAnswers = numberOfRightAnswers,
+                    numberOfRightAnswers = result,
                     numberOfQuestions = questions.size
                 )
             }

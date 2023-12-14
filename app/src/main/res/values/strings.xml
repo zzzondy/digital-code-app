@@ -133,4 +133,13 @@
     <string name="tinkoff_link" translatable="false">https://www.tinkoff.ru/cards/debit-cards/tinkoff-black/junior/</string>
     <string name="sber_link" translatable="false">https://www.sberbank.com/ru/person/bank_cards/debit/sberkarta_kids</string>
     <string name="vtb_link" translatable="false">https://www.vtb.ru/personal/karty/debetovye/detskaya/</string>
+    <string name="feedback">Feedback</string>
+    <string name="feedback_icon">Feedback icon</string>
+    <string name="form_can_not_be_blank">Form can not be blank</string>
+    <string name="message">Message</string>
+    <string name="name">Name</string>
+    <string name="send">Send</string>
+    <string name="feedback_description">You can send your review</string>
+    <string name="success_feedback">You successfully sent feedback</string>
+    <string name="error_feedback">Some error occurred, try again</string>
 </resources>

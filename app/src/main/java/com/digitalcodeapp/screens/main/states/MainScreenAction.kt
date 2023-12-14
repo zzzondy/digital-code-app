@@ -11,4 +11,6 @@ sealed interface MainScreenAction {
     data object OnFactsAboutRubleSectionClicked : MainScreenAction
 
     data object OnQuizSectionClicked : MainScreenAction
+
+    data object OnFeedbackSectionClicked : MainScreenAction
 }

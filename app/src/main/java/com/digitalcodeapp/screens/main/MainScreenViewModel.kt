@@ -28,6 +28,8 @@ class MainScreenViewModel @Inject constructor() : ViewModel() {
 
             MainScreenAction.OnPocketMoneySectionClicked -> onPocketMoneySectionClicked()
 
+            MainScreenAction.OnFeedbackSectionClicked -> onFeedbackSectionClicked()
+
         }
     }
 
@@ -58,6 +60,12 @@ class MainScreenViewModel @Inject constructor() : ViewModel() {
     private fun onPocketMoneySectionClicked() {
         viewModelScope.launch {
             _effect.emit(MainScreenEffect.NavigateToPocketMoneyScreen)
+        }
+    }
+
+    private fun onFeedbackSectionClicked() {
+        viewModelScope.launch {
+            _effect.emit(MainScreenEffect.NavigateToFeedbackScreen)
         }
     }
 }

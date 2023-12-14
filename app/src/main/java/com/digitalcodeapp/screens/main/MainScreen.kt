@@ -65,6 +65,10 @@ fun MainScreen(
             MainScreenEffect.NavigateToFactsAboutRubleScreen -> {
                 navController.navigate(Screen.FactsAboutRubleScreen.route)
             }
+
+            MainScreenEffect.NavigateToFeedbackScreen -> {
+                navController.navigate(Screen.FeedbackScreen.route)
+            }
         }
     }
 
@@ -83,6 +87,9 @@ fun MainScreen(
         },
         onFactsAboutRubleSectionClicked = {
             viewModel.onAction(MainScreenAction.OnFactsAboutRubleSectionClicked)
+        },
+        onFeedbackSectionClicked = {
+            viewModel.onAction(MainScreenAction.OnFeedbackSectionClicked)
         }
     )
 }
@@ -95,6 +102,7 @@ fun MainScreenContent(
     onFinancialScamSectionClicked: () -> Unit = {},
     onQuizSectionClicked: () -> Unit = {},
     onFactsAboutRubleSectionClicked: () -> Unit = {},
+    onFeedbackSectionClicked: () -> Unit = {},
 ) {
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
@@ -186,6 +194,19 @@ fun MainScreenContent(
                         .fillMaxWidth()
                         .height(125.dp),
                     onSectionClicked = onQuizSectionClicked,
+                )
+            }
+
+            item(key = "feedback") {
+                Section(
+                    label = stringResource(R.string.feedback),
+                    description = stringResource(R.string.feedback_description),
+                    icon = painterResource(R.drawable.chat),
+                    iconContentDescription = stringResource(R.string.feedback_icon),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(125.dp),
+                    onSectionClicked = onFeedbackSectionClicked,
                 )
             }
         }

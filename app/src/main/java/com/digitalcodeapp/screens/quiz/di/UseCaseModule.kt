@@ -1,6 +1,7 @@
 package com.digitalcodeapp.screens.quiz.di
 
 import com.digitalcodeapp.screens.quiz.domain.repository.QuizRepository
+import com.digitalcodeapp.screens.quiz.domain.use_cases.CheckAnswersOnQuestionsUseCase
 import com.digitalcodeapp.screens.quiz.domain.use_cases.ObtainAllQuizQuestionsUseCase
 import dagger.Module
 import dagger.Provides
@@ -16,4 +17,9 @@ class UseCaseModule {
     @Provides
     fun provideObtainAllQuizQuestionsUseCase(quizRepository: QuizRepository): ObtainAllQuizQuestionsUseCase =
         ObtainAllQuizQuestionsUseCase(quizRepository)
+
+    @ViewModelScoped
+    @Provides
+    fun provideCheckAnswersOnQuestionsUseCase(): CheckAnswersOnQuestionsUseCase =
+        CheckAnswersOnQuestionsUseCase()
 }

@@ -13,4 +13,6 @@ sealed class Screen(val route: String) {
     data object FactsAboutRubleScreen : Screen(route = "facts_about_ruble_screen")
 
     data object QuizScreen : Screen(route = "quiz_screen")
+
+    data object FeedbackScreen : Screen(route = "feedback_screen")
 }

@@ -2,7 +2,7 @@ package com.digitalcodeapp.screens.quiz.data.utils
 
 import com.digitalcodeapp.screens.quiz.data.remote.models.RemoteQuestion
 import com.digitalcodeapp.screens.quiz.data.remote.states.RemoteObtainingAllQuizQuestionsResult
-import com.digitalcodeapp.screens.quiz.domain.models.Question
+import com.digitalcodeapp.screens.quiz.domain.models.DomainQuestion
 import com.digitalcodeapp.screens.quiz.domain.states.ObtainingAllQuizQuestionsResult
 
 fun RemoteObtainingAllQuizQuestionsResult.toDomain() =
@@ -14,7 +14,7 @@ fun RemoteObtainingAllQuizQuestionsResult.toDomain() =
     }
 
 private fun RemoteQuestion.toDomain() =
-    Question(
+    DomainQuestion(
         id = id,
         question = question,
         rightAnswers = rightAnswers,
