@@ -11,4 +11,6 @@ sealed interface MainScreenEffect {
     data object NavigateToFactsAboutRubleScreen : MainScreenEffect
 
     data object NavigateToQuizScreen : MainScreenEffect
+
+    data object NavigateToFeedbackScreen : MainScreenEffect
 }

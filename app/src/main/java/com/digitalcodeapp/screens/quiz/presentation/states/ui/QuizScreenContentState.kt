@@ -46,13 +46,13 @@ import androidx.compose.ui.unit.dp
 import com.digitalcodeapp.R
 import com.digitalcodeapp.common.ui.theme.DarkYellow
 import com.digitalcodeapp.common.ui.theme.DigitalCodeAppTheme
-import com.digitalcodeapp.screens.quiz.presentation.PresentationQuestion
+import com.digitalcodeapp.screens.quiz.domain.models.Question
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun QuizScreenContentState(
-    questions: List<PresentationQuestion>,
+    questions: List<Question>,
     onSelectAnswer: (Int, String) -> Unit,
     modifier: Modifier = Modifier,
     onFinishButtonClicked: () -> Unit = {},
@@ -82,7 +82,7 @@ fun QuizScreenContentState(
         ) {
             items(pagerState.pageCount) { iteration ->
                 val color = when (val question = questions[iteration]) {
-                    is PresentationQuestion.QuestionWithMultipleAnswers -> {
+                    is Question.QuestionWithMultipleAnswers -> {
                         if (question.selectedAnswers.isEmpty()) {
                             Color.LightGray
                         } else {
@@ -90,7 +90,7 @@ fun QuizScreenContentState(
                         }
                     }
 
-                    is PresentationQuestion.QuestionWithSingleAnswer -> {
+                    is Question.QuestionWithSingleAnswer -> {
                         if (question.selectedAnswer.isBlank()) {
                             Color.LightGray
                         } else {
@@ -211,7 +211,7 @@ fun QuizScreenContentState(
 @Composable
 private fun QuestionSection(
     numberOfQuestion: Int,
-    presentationQuestion: PresentationQuestion,
+    presentationQuestion: Question,
     onSelectAnswer: (Int, String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -224,8 +224,8 @@ private fun QuestionSection(
     ) {
         item {
             Text(
-                text = if (presentationQuestion is PresentationQuestion.QuestionWithSingleAnswer) presentationQuestion.question.question else
-                    (presentationQuestion as PresentationQuestion.QuestionWithMultipleAnswers).question.question,
+                text = if (presentationQuestion is Question.QuestionWithSingleAnswer) presentationQuestion.domainQuestion.question else
+                    (presentationQuestion as Question.QuestionWithMultipleAnswers).domainQuestion.question,
                 style = MaterialTheme.typography.headlineSmall,
                 color = MaterialTheme.colorScheme.onBackground,
                 modifier = Modifier
@@ -235,7 +235,7 @@ private fun QuestionSection(
         }
 
         when (presentationQuestion) {
-            is PresentationQuestion.QuestionWithSingleAnswer -> {
+            is Question.QuestionWithSingleAnswer -> {
                 item {
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
@@ -278,7 +278,7 @@ private fun QuestionSection(
                 }
             }
 
-            is PresentationQuestion.QuestionWithMultipleAnswers -> {
+            is Question.QuestionWithMultipleAnswers -> {
                 item {
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,

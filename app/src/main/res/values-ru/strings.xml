@@ -71,4 +71,13 @@
     <string name="tinkoff">Тинькофф</string>
     <string name="sber">Сбер</string>
     <string name="vtb">ВТБ</string>
+    <string name="feedback">Обратная связь</string>
+    <string name="feedback_icon">Отзыв</string>
+    <string name="form_can_not_be_blank">Форма не может быть пуста</string>
+    <string name="message">Сообщение</string>
+    <string name="name">Имя</string>
+    <string name="send">Отправить</string>
+    <string name="feedback_description">Здесь вы можете оставить предложения по улучшению</string>
+    <string name="success_feedback">Отзыв успешно отправлен</string>
+    <string name="error_feedback">Произошла ошибка, попробуйте еще раз</string>
 </resources>
